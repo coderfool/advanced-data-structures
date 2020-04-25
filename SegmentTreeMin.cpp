@@ -101,6 +101,9 @@ class SegmentTreeMin {
     }
 
     void increment(int left, int right, int val) {
+        if (left > right) {
+            return;
+        }
         lazy_update(0, left, right, val, 0, size - 1);
     }
 };
