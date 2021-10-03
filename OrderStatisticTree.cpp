@@ -35,7 +35,7 @@ class OrderStatisticTree {
         }
     }
  
-    int order_util(Node* root, int val) {
+    int rank_util(Node* root, int val) {
         if (!root) {
             return 0;
         }
@@ -46,14 +46,14 @@ class OrderStatisticTree {
             return 0;
         }
         else if (root->val > val) {
-            return order_util(root->left, val);
+            return rank_util(root->left, val);
         }
         else {
             int left_size = 0;
             if (root->left) {
                 left_size = root->left->size;
             }
-            return left_size + root->count + order_util(root->right, val);
+            return left_size + root->count + rank_util(root->right, val);
         }
     }
  
@@ -282,8 +282,8 @@ class OrderStatisticTree {
         root = remove_util(root, val);
     }
  
-    int order(int val) {
-        return order_util(root, val);
+    int rank(int val) {
+        return rank_util(root, val);
     }
  
     int count(int val) {
