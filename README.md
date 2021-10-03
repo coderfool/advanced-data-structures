@@ -34,7 +34,7 @@ Inserts `val` into the tree.
 #### void remove (int val)
 Removes one occurence of `val` from the tree. If not present, it does nothing.
 
-#### int order (int val)
+#### int rank (int val)
 Returns number of elements in the tree (including duplicates) that are strictly smaller than `val`.
 
 #### int count (int val)
